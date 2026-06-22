@@ -1,0 +1,34 @@
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: digitalwallet-mysql
+    environment:
+      MYSQL_DATABASE: digitalwallet
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password="]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  app:
+    build: .
+    container_name: digitalwallet-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: on-failure
+    env_file:
+      - .env
+
+volumes:
+  mysql_data:
+    
