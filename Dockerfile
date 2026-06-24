@@ -2,7 +2,7 @@
 # Stage 1 — BUILD
 # Maven compiles the code and creates the jar
 # ================================
-FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
+FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ RUN mvn clean package -DskipTests
 # Stage 2 — RUN
 # Lightweight image, just copies the jar from Stage 1
 # ================================
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
