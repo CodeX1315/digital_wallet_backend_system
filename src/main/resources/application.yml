@@ -3,9 +3,9 @@ spring:
     name: wallet
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://mysql:3306/digitalwallet}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD:}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://reseau.proxy.rlwy.net:27450/railway}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:ecQQtASlPXVyqaBjPfywXGbQNesWMqvc}
 
   jpa:
     hibernate:
@@ -15,8 +15,8 @@ spring:
   mail:
     host: sandbox.smtp.mailtrap.io
     port: 2525
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    username: ${MAIL_USERNAME:14ffffdcd146ec}
+    password: ${MAIL_PASSWORD:0343cab8f8f6e1}
     properties:
       mail:
         smtp:
