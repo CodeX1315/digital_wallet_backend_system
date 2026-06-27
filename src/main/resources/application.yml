@@ -29,6 +29,7 @@ springdoc:
     path: /docs
   api-docs:
     path: /api-docs
+  packages-to-scan: com.example.digitalwallet.wallet
 
 server:
   forward-headers-strategy: framework
