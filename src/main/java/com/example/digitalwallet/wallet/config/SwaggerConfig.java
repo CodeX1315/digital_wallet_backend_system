@@ -22,6 +22,11 @@ public class SwaggerConfig {
 
         return new OpenAPI()
 
+                // Production server URL
+                .addServersItem(new io.swagger.v3.oas.models.servers.Server()
+                        .url("https://digitalwalletbackendsystem-production.up.railway.app")
+                        .description("Production server"))
+
                 // JWT Security
                 .addSecurityItem(new SecurityRequirement()
                         .addList(securitySchemeName))
