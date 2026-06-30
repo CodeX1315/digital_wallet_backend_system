@@ -22,12 +22,6 @@ public class SwaggerConfig {
 
         return new OpenAPI()
 
-                // Production server URL
-                .addServersItem(new io.swagger.v3.oas.models.servers.Server()
-                        .url("https://digitalwalletbackendsystem-production.up.railway.app")
-                        .description("Production server"))
-
-                // JWT Security
                 .addSecurityItem(new SecurityRequirement()
                         .addList(securitySchemeName))
 
@@ -39,7 +33,6 @@ public class SwaggerConfig {
                                         .scheme("bearer")
                                         .bearerFormat("JWT")))
 
-                // API Information
                 .info(new Info()
                         .title("Wallet Management API")
                         .version("1.0")
@@ -50,7 +43,6 @@ public class SwaggerConfig {
                         .license(new License()
                                 .name("Apache 2.0")))
 
-                // External Docs
                 .externalDocs(new ExternalDocumentation()
                         .description("Project Documentation"));
     }
