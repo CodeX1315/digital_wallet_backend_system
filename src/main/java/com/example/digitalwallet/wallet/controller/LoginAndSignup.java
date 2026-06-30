@@ -45,6 +45,7 @@ public class LoginAndSignup {
     )
     @PostMapping("/signup")
     public ResponseEntity<RegisterResponse> registerUser(@RequestBody RegisterRequest registerRequest) throws MessagingException, UnsupportedEncodingException {
+        System.out.println("Signup endpoint reached");
         RegisterResponse saveUser= userService.registerUser(registerRequest);
         return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
     }
