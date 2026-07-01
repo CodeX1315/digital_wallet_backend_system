@@ -6,7 +6,6 @@ import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication()
-@EnableAsync
 public class WalletApplication {
 
 	public static void main(String[] args) {
