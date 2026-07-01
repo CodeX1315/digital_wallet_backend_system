@@ -41,7 +41,7 @@ public class UserService {
     private EmailService emailService;
 
     @Transactional
-    public RegisterResponse registerUser(RegisterRequest registerRequest) throws MessagingException, UnsupportedEncodingException {
+    public RegisterResponse registerUser(RegisterRequest registerRequest){
 
         if(userRepository.findByEmail(registerRequest.email()).isPresent()){
             throw new UserAlreadyExistsException("User already exists");

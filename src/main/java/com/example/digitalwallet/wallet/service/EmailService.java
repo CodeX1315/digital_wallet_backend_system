@@ -23,7 +23,7 @@ public class EmailService {
     private JavaMailSender javaMailSender;
 
     @Async
-    public void sendMail(String sentTo, String subject, String body) throws MessagingException, UnsupportedEncodingException {
+    public void sendMail(String sentTo, String subject, String body){
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper mime = new MimeMessageHelper(message, true);
